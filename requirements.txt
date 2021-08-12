@@ -11,3 +11,4 @@ matplotlib==3.3.4
 xlrd
 openpyxl
 # tensorflow-gpu==2.5.0
+imbalanced-learn==0.8.0
