@@ -8,7 +8,8 @@ then
     if [ -z "$container_search" ]
     then
         container_id=$(
-            docker run --gpus all -it -v $(pwd):/tf/notebooks -p 8888:8888 -d tensorflow/tensorflow:nightly-gpu-jupyter
+            docker run --gpus all -it -v $(pwd):/tf/notebooks -p 8888:8888 -d tensorflow/tensorflow:latest-gpu-jupyter
+            # docker run --gpus all -it -v $(pwd):/tf/notebooks -p 8888:8888 -d tensorflow/tensorflow:nightly-gpu-jupyter
         )
         docker exec -it $container_id pip3 install -r notebooks/requirements.txt
         logs=$(docker logs $container_id | grep 'http://127.0.0.1:8888/?token=' )
